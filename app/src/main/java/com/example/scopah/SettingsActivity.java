@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class SettingsActivity extends AppCompatActivity {
-    private static final String PREFERENCES_KEY = "com.example.scopah.PREFERENCES_KEY";
+    private static final String SETTINGS_PREFERENCES_KEY = "com.example.scopah.SETTINGS_PREFERENCES_KEY";
     private static final String NAPOLA_KEY = "NAPOLA";
 
     @Override
@@ -17,7 +17,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        SharedPreferences preferences = getSharedPreferences(PREFERENCES_KEY, Context.MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences(SETTINGS_PREFERENCES_KEY, Context.MODE_PRIVATE);
 
         final SwitchCompat switch_napola = (SwitchCompat) findViewById(R.id.switch_napola);
         switch_napola.setChecked(preferences.getBoolean(NAPOLA_KEY, true));
