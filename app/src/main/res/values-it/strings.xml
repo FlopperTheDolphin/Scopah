@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Scopah</string>
+    <string name="logo">Logo</string>
+    <string name="application_name">Scopah</string>
+    <string name="play">Gioca</string>
+    <string name="resume">Continua</string>
+    <string name="stats">Statistiche</string>
+    <string name="past_games">Partitie Giocate</string>
+    <string name="saved_games">Partite Salvate</string>
+    <string name="players">Giocatori</string>
+    <string name="settings">Impostazioni</string>
+    <string name="napola">Napola</string>
+    <string name="end">Fine</string>
+    <string name="minimum_players">Servono almeno 2 giocatori</string>
+</resources>
