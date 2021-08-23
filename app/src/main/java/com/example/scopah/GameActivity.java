@@ -193,6 +193,14 @@ public class GameActivity extends AppCompatActivity {
             });
         }
 
+        final Button end = (Button) findViewById(R.id.end);
+        end.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
+
     }
 
     private void refreshScores() {
@@ -213,5 +221,15 @@ public class GameActivity extends AppCompatActivity {
             score = (TextView) findViewById(R.id.score_four);
             score.setText(scores.get(3).toString());
         }
+    }
+
+    private void end() {
+        final Intent intent = new Intent(this, LeaderboardActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("names", names);
+        intent.putExtra("colors", colors);
+        intent.putExtra("scores", scores);
+
+        startActivity(intent);
     }
 }

@@ -25,7 +25,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="+"
-                android:textSize="48sp"/>
+                android:textSize="48dp"/>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="0dp"
@@ -42,7 +42,7 @@
                     android:rotation="180"
                     android:text="0"
                     android:textAlignment="center"
-                    android:textSize="48sp" />
+                    android:textSize="48dp" />
 
                 <TextView
                     android:id="@+id/name_one"
@@ -52,8 +52,8 @@
                     android:layout_weight="1"
                     android:textAlignment="center"
                     android:rotation="180"
-                    android:textSize="18sp"
-                    android:translationY="-9sp"
+                    android:textSize="18dp"
+                    android:translationY="-9dp"
                     android:text="Player One"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -64,14 +64,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="-"
-                android:textSize="48sp"/>
+                android:textSize="48dp"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:padding="50dp"
             android:orientation="horizontal"
             android:gravity="center"
             android:layout_weight="2">
@@ -79,9 +78,9 @@
             <Button
                 android:id="@+id/end"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/end"
-                android:textSize="32sp"/>
+                android:textSize="32dp"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -97,7 +96,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="-"
-                android:textSize="48sp"/>
+                android:textSize="48dp"/>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="0dp"
@@ -112,9 +111,9 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:textAlignment="center"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:text="Player Two"
-                    android:translationY="9sp"/>
+                    android:translationY="9dp"/>
 
                 <TextView
                     android:id="@+id/score_two"
@@ -124,7 +123,7 @@
                     android:layout_gravity="center"
                     android:text="0"
                     android:textAlignment="center"
-                    android:textSize="48sp" />
+                    android:textSize="48dp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -136,7 +135,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="+"
-                android:textSize="48sp"/>
+                android:textSize="48dp"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -12,4 +12,5 @@
     <string name="napola">Napola</string>
     <string name="end">Fine</string>
     <string name="minimum_players">Servono almeno 2 giocatori</string>
+    <string name="leaderboard">Classifica</string>
 </resources>

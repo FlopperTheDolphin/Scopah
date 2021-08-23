@@ -4,158 +4,192 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlayActivity">
+    tools:context=".LeaderboardActivity">
+
+
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:orientation="vertical"
         android:padding="10dp"
-        android:focusable="true"
-        android:focusableInTouchMode="true">
+        tools:visibility="visible">
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/row1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingVertical="10dp">
 
-            <EditText
+            <TextView
                 android:id="@+id/text1"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="4"
                 android:background="#F44336"
-                android:inputType="text"
-                android:selectAllOnFocus="true"
                 android:singleLine="true"
                 android:text="Player One"
                 android:textAlignment="center"
                 android:textSize="32dp" />
 
-            <CheckBox
-                android:id="@+id/checkBox1"
+            <TextView
+                android:id="@+id/score1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:scaleX="2"
-                android:scaleY="2"
-                android:translationX="50dp" />
+                android:gravity="center"
+                android:text="0"
+                android:textSize="32dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/row2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingVertical="10dp">
 
-            <EditText
+            <TextView
                 android:id="@+id/text2"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="4"
                 android:background="#2196F3"
-                android:inputType="text"
-                android:selectAllOnFocus="true"
                 android:singleLine="true"
                 android:text="Player Two"
                 android:textAlignment="center"
                 android:textSize="32dp" />
 
-            <CheckBox
-                android:id="@+id/checkBox2"
+            <TextView
+                android:id="@+id/score2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:scaleX="2"
-                android:scaleY="2"
-                android:translationX="50dp" />
+                android:gravity="center"
+                android:text="0"
+                android:textSize="32dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/row3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingVertical="10dp">
 
-            <EditText
+            <TextView
                 android:id="@+id/text3"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="4"
                 android:background="#4CAF50"
-                android:inputType="text"
-                android:selectAllOnFocus="true"
                 android:singleLine="true"
                 android:text="Player Three"
                 android:textAlignment="center"
                 android:textSize="32dp" />
 
-            <CheckBox
-                android:id="@+id/checkBox3"
+            <TextView
+                android:id="@+id/score3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:scaleX="2"
-                android:scaleY="2"
-                android:translationX="50dp" />
+                android:gravity="center"
+                android:text="0"
+                android:textSize="32dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/row4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="10dp"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="4"
+                android:background="#FFEB3B"
+                android:singleLine="true"
+                android:text="Player Four"
+                android:textAlignment="center"
+                android:textSize="32dp" />
+
+            <TextView
+                android:id="@+id/score4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="32dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_new"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="New"
+                android:textSize="24dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="10dp">
+            android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/text4"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="4"
-                android:background="#FFEB3B"
-                android:inputType="text"
-                android:selectAllOnFocus="true"
-                android:singleLine="true"
-                android:text="Player Four"
-                android:textAlignment="center"
-                android:textSize="32dp" />
-
-            <CheckBox
-                android:id="@+id/checkBox4"
-                android:layout_width="0dp"
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:scaleX="2"
-                android:scaleY="2"
-                android:translationX="50dp"
-                />
+                android:layout_gravity="bottom"
+                android:text="Save"
+                android:textSize="24dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:padding="0dp">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button_start"
+                android:id="@+id/button_end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:text="Start"
+                android:text="End"
                 android:textSize="24dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

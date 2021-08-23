@@ -12,4 +12,5 @@
     <string name="napola">Napola</string>
     <string name="end">End</string>
     <string name="minimum_players">Need at least 2 players</string>
+    <string name="leaderboard">Leaderboard</string>
 </resources>

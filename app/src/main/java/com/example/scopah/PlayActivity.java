@@ -73,7 +73,7 @@ public class PlayActivity extends AppCompatActivity {
             return;
         }
 
-        final Intent intent = new Intent(this, GameActivity.class);
+        final Intent intent = new Intent(this, LeaderboardActivity.class);
         intent.putExtra("names", names);
         intent.putExtra("colors", colors);
 
