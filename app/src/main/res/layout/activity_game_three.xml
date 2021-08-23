@@ -53,9 +53,10 @@
                     android:layout_weight="1"
                     android:textAlignment="center"
                     android:rotation="180"
-                    android:textSize="16dp"
-                    android:text="Player One"
-                    android:translationY="-8dp"/>
+                    android:textSize="12dp"
+                    android:text="@string/player_one"
+                    android:lines="2"
+                    android:translationY="-6dp"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -131,9 +132,10 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:textAlignment="center"
-                            android:textSize="16dp"
+                            android:textSize="12dp"
                             android:rotation="90"
-                            android:text="Player Two"/>
+                            android:text="@string/player_two"
+                            android:lines="2"/>
 
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -176,9 +178,11 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:textAlignment="center"
-                            android:textSize="16dp"
+                            android:textSize="12dp"
                             android:rotation="-90"
-                            android:text="Player Three"/>
+                            android:text="@string/player_three"
+                            android:lines="2"/>
+
                         <TextView
                             android:id="@+id/score_three"
                             android:layout_width="0dp"

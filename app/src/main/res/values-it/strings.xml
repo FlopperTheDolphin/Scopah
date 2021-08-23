@@ -13,4 +13,10 @@
     <string name="end">Fine</string>
     <string name="minimum_players">Servono almeno 2 giocatori</string>
     <string name="leaderboard">Classifica</string>
+    <string name="save">Salva</string>
+    <string name="new_round">Nuovo Round</string>
+    <string name="player_one">Giocatore Uno</string>
+    <string name="player_two">Giocatore Due</string>
+    <string name="player_three">Giocatore Tre</string>
+    <string name="player_four">Giocatore Quattro</string>
 </resources>

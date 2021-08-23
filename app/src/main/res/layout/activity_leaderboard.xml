@@ -31,7 +31,7 @@
                 android:layout_weight="4"
                 android:background="#F44336"
                 android:singleLine="true"
-                android:text="Player One"
+                android:text="@string/player_one"
                 android:textAlignment="center"
                 android:textSize="32dp" />
 
@@ -61,7 +61,7 @@
                 android:layout_weight="4"
                 android:background="#2196F3"
                 android:singleLine="true"
-                android:text="Player Two"
+                android:text="@string/player_two"
                 android:textAlignment="center"
                 android:textSize="32dp" />
 
@@ -91,7 +91,7 @@
                 android:layout_weight="4"
                 android:background="#4CAF50"
                 android:singleLine="true"
-                android:text="Player Three"
+                android:text="@string/player_three"
                 android:textAlignment="center"
                 android:textSize="32dp" />
 
@@ -122,7 +122,7 @@
                 android:layout_weight="4"
                 android:background="#FFEB3B"
                 android:singleLine="true"
-                android:text="Player Four"
+                android:text="@string/player_four"
                 android:textAlignment="center"
                 android:textSize="32dp" />
 
@@ -154,7 +154,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:text="New"
+                android:text="@string/new_round"
                 android:textSize="24dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -169,7 +169,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:text="Save"
+                android:text="@string/save"
                 android:textSize="24dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -184,7 +184,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:text="End"
+                android:text="@string/end"
                 android:textSize="24dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

@@ -13,4 +13,10 @@
     <string name="end">End</string>
     <string name="minimum_players">Need at least 2 players</string>
     <string name="leaderboard">Leaderboard</string>
+    <string name="save">Save</string>
+    <string name="new_round">New Round</string>
+    <string name="player_one">Player One</string>
+    <string name="player_two">Player Two</string>
+    <string name="player_three">Player Three</string>
+    <string name="player_four">Player Four</string>
 </resources>

@@ -59,9 +59,10 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textAlignment="center"
-                        android:textSize="14dp"
+                        android:textSize="12dp"
                         android:rotation="90"
-                        android:text="Player One"/>
+                        android:lines="2"
+                        android:text="@string/player_one"/>
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -104,9 +105,11 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textAlignment="center"
-                        android:textSize="14dp"
+                        android:textSize="12dp"
                         android:rotation="-90"
-                        android:text="Player Two"/>
+                        android:lines="2"
+                        android:text="@string/player_two"/>
+
                     <TextView
                         android:id="@+id/score_two"
                         android:layout_width="0dp"
@@ -196,9 +199,10 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:rotation="90"
-                        android:text="Player Three"
+                        android:lines="2"
+                        android:text="@string/player_three"
                         android:textAlignment="center"
-                        android:textSize="14dp"/>
+                        android:textSize="12dp"/>
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -241,9 +245,10 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textAlignment="center"
-                        android:textSize="14dp"
+                        android:textSize="12dp"
                         android:rotation="-90"
-                        android:text="Player Four"/>
+                        android:lines="2"
+                        android:text="@string/player_four"/>
                     <TextView
                         android:id="@+id/score_four"
                         android:layout_width="0dp"

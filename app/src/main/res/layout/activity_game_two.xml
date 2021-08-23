@@ -50,11 +50,12 @@
                     android:layout_height="0dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:textAlignment="center"
+                    android:lines="2"
                     android:rotation="180"
-                    android:textSize="18dp"
-                    android:translationY="-9dp"
-                    android:text="Player One"/>
+                    android:text="@string/player_one"
+                    android:textAlignment="center"
+                    android:textSize="14dp"
+                    android:translationY="-7dp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -111,9 +112,10 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:text="Player Two"
-                    android:translationY="9dp"/>
+                    android:textSize="14dp"
+                    android:text="@string/player_two"
+                    android:lines="2"
+                    android:translationY="7dp"/>
 
                 <TextView
                     android:id="@+id/score_two"
