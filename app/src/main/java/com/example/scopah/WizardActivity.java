@@ -10,7 +10,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,12 +23,9 @@ public class WizardActivity extends AppCompatActivity {
     private ArrayList<Integer> scores;
 
     private int questionIndex;
-
-    private String[] questions;
-
-    private static final String SETTINGS_PREFERENCES_KEY = "com.example.scopah.SETTINGS_PREFERENCES_KEY";
-    private static final String NAPOLA_KEY = "NAPOLA";
-    private static final String MAIN_SEED_KEY = "MAIN_SEED";
+    private boolean napola;
+    private int bonus;
+    private ArrayList<String> questions;
 
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
@@ -44,41 +43,59 @@ public class WizardActivity extends AppCompatActivity {
         questionIndex = intent.getIntExtra("index", 0);
         int size = names.size();
 
-        preferences = getSharedPreferences(SETTINGS_PREFERENCES_KEY, Context.MODE_PRIVATE);
+        preferences = getSharedPreferences(SettingsActivity.SETTINGS_PREFERENCES_KEY, Context.MODE_PRIVATE);
         editor = preferences.edit();
 
         final String who_has = getString(R.string.who_has) + " ";
 
         intent.putExtra("index", 0); // question index
-        questions = new String[] {
-                who_has + "more coins?",
-                who_has + "the 7 of coins?",
-                who_has + "the highest prime (the majority of sevens)?",
-                who_has + "more cards?",
-                who_has + "napola (1, 2, 3 of coins)?",
-                who_has + "the two of spades?",
-                who_has + "the 10 of coins?",
-                who_has + "the 8 of cups?"
-        };
+        questions = new ArrayList<>();
+
+        questions.add(who_has + getString(R.string.more_coins));
+        questions.add(who_has + getString(R.string.prime));
+        questions.add(who_has + getString(R.string.more_cards));
+
+        if (preferences.getBoolean(SettingsActivity.NAPOLA_KEY, true))
+            questions.add(who_has + getString(R.string.napola_question));
+
+        if (preferences.getBoolean(SettingsActivity.SEVEN_COINS_KEY, true))
+            questions.add(who_has + getString(R.string.seven_coins));
+
+        if (preferences.getBoolean(SettingsActivity.TWO_SPADES_KEY, true))
+            questions.add(who_has + getString(R.string.two_spades));
+
+        if (preferences.getBoolean(SettingsActivity.TEN_COINS_KEY, true))
+            questions.add(who_has + getString(R.string.ten_coins));
+
+        if (preferences.getBoolean(SettingsActivity.EIGHT_CUPS_KEY, true))
+            questions.add(who_has + getString(R.string.eight_cups));
 
         if (questionIndex == 0) {
-            String mainSeed = preferences.getString(MAIN_SEED_KEY, "COINS");
+            String mainSeed = preferences.getString(SettingsActivity.MAIN_SEED_KEY, "COINS");
 
             switch (mainSeed) {
                 case "SPADES":
-                    questions[0] = who_has + "more spades?";
+                    questions.set(0, who_has + getString(R.string.more_spades));
                     break;
                 case "CUPS":
-                    questions[0] = who_has + "more cups?";
+                    questions.set(0, who_has + getString(R.string.more_cups));
                     break;
                 case "BATONS":
-                    questions[0] = who_has + "more batons?";
+                    questions.set(0, who_has + getString(R.string.more_batons));
                     break;
             }
         }
 
         TextView currentQuestion = (TextView) findViewById(R.id.question);
-        currentQuestion.setText(questions[questionIndex]);
+        currentQuestion.setText(questions.get(questionIndex));
+
+        napola = preferences.getBoolean(SettingsActivity.NAPOLA_KEY, true)
+                    && questionIndex == 3;
+
+        if (!napola) {
+            LinearLayoutCompat row = (LinearLayoutCompat) findViewById(R.id.row_napola);
+            row.setVisibility(View.INVISIBLE);
+        }
 
         // player one
         Button button = (Button) findViewById(R.id.button_one);
@@ -88,7 +105,13 @@ public class WizardActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scores.set(0, scores.get(0) + 1);
+                if (napola) {
+                    if (!checkBonus())
+                        return;
+                } else {
+                    bonus = 1;
+                }
+                scores.set(0, scores.get(0) + bonus);
                 next();
             }
         });
@@ -101,7 +124,13 @@ public class WizardActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scores.set(1, scores.get(1) + 1);
+                if (napola) {
+                    if (!checkBonus())
+                        return;
+                } else {
+                    bonus = 1;
+                }
+                scores.set(1, scores.get(1) + bonus);
                 next();
             }
         });
@@ -115,7 +144,13 @@ public class WizardActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scores.set(2, scores.get(2) + 1);
+                    if (napola) {
+                        if (!checkBonus())
+                            return;
+                    } else {
+                        bonus = 1;
+                    }
+                    scores.set(2, scores.get(2) + bonus);
                     next();
                 }
             });
@@ -133,7 +168,13 @@ public class WizardActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scores.set(3, scores.get(3) + 1);
+                    if (napola) {
+                        if (!checkBonus())
+                            return;
+                    } else {
+                        bonus = 1;
+                    }
+                    scores.set(3, scores.get(3) + bonus);
                     next();
                 }
             });
@@ -141,17 +182,39 @@ public class WizardActivity extends AppCompatActivity {
             LinearLayoutCompat row = (LinearLayoutCompat) findViewById(R.id.row4);
             row.setVisibility(View.INVISIBLE);
         }
+
+        // skip
+        button = (Button) findViewById(R.id.button_skip);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                next();
+            }
+        });
+    }
+
+    private boolean checkBonus() {
+        EditText napola_text = (EditText) findViewById(R.id.editTextNumber);
+        bonus = Integer.parseInt(napola_text.getText().toString());
+
+        if (bonus >= 3 && bonus <= 10)
+            return true;
+        else
+            Toast.makeText(this, R.string.napola_bounds, Toast.LENGTH_SHORT).show();
+
+        return false;
     }
 
     private void next() {
         final Intent intent;
         questionIndex += 1;
 
-        if (questionIndex < questions.length) {
+        if (questionIndex < questions.size()) {
             intent = new Intent(this, WizardActivity.class);
             intent.putExtra("index", questionIndex);
         } else {
             intent = new Intent(this, LeaderboardActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         }
 
         intent.putExtra("names", names);

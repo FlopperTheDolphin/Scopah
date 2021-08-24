@@ -25,4 +25,21 @@
     <string name="spades">Spade</string>
     <string name="cups">Coppe</string>
     <string name="batons">Bastoni</string>
+    <string name="more_coins">più denari?</string>
+    <string name="seven_coins">il sette bello?</string>
+    <string name="prime">la primiera (maggior numero di 7)?</string>
+    <string name="more_cards">più carte?</string>
+    <string name="napola_question">napola?</string>
+    <string name="two_spades">il due di spade?</string>
+    <string name="ten_coins">il re di denari?</string>
+    <string name="eight_cups">il fante di coppe?</string>
+    <string name="more_spades">più spade?</string>
+    <string name="more_cups">più coppe?</string>
+    <string name="more_batons">più bastoni?</string>
+    <string name="skip">Salta</string>
+    <string name="napola_bounds">Napola é tra 3 e 10</string>
+    <string name="seven_of_coins">Sette Bello</string>
+    <string name="two_of_spades">Due di Spade</string>
+    <string name="ten_of_coins">Re di Denari</string>
+    <string name="eight_of_cups">Fante di Coppe</string>
 </resources>

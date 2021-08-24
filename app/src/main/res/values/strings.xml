@@ -25,4 +25,21 @@
     <string name="spades">Spades</string>
     <string name="cups">Cups</string>
     <string name="batons">Batons</string>
+    <string name="more_coins">more coins?</string>
+    <string name="seven_coins">the 7 of coins?</string>
+    <string name="prime">the prime (the majority of sevens)?</string>
+    <string name="more_cards">more cards?</string>
+    <string name="napola_question">napola?</string>
+    <string name="two_spades">the two of spades?</string>
+    <string name="ten_coins">the 10 of coins?</string>
+    <string name="eight_cups">the 8 of cups?</string>
+    <string name="more_spades">more spades?</string>
+    <string name="more_cups">more cups?</string>
+    <string name="more_batons">more batons?</string>
+    <string name="skip">Skip</string>
+    <string name="napola_bounds">Napola is between 3 and 10</string>
+    <string name="seven_of_coins">Seven of Coins</string>
+    <string name="two_of_spades">Two of Spades</string>
+    <string name="ten_of_coins">Ten of Coins</string>
+    <string name="eight_of_cups">Eight of Cups</string>
 </resources>

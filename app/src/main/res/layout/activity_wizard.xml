@@ -18,14 +18,42 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/question"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question question question question question question question question question question question question question"
+                android:text="Question question question question question question question question question question"
                 android:textSize="32dp"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/row_napola"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:textSize="32dp"
+                    android:text="Coins from 1 to:"/>
+
+                <EditText
+                    android:id="@+id/editTextNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:selectAllOnFocus="true"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:text="3"
+                    android:textSize="32dp"
+                    android:textAlignment="center"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -96,6 +124,24 @@
                 android:layout_height="60dp"
                 android:singleLine="true"
                 android:text="@string/player_four"
+                android:textAlignment="center"
+                android:textSize="32dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="10dp"
+            android:gravity="right">
+
+            <Button
+                android:id="@+id/button_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:singleLine="true"
+                android:text="@string/skip"
                 android:textAlignment="center"
                 android:textSize="32dp" />
 

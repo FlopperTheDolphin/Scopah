@@ -15,20 +15,6 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="10dp">
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switch_napola"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/napola"
-                android:textSize="18dp" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingVertical="10dp">
 
@@ -73,6 +59,49 @@
                     android:layout_weight="1"
                     android:text="@string/batons" />
             </RadioGroup>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="10dp">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_napola"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/napola"
+                android:textSize="18dp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_seven_coins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/seven_of_coins"
+                android:textSize="18dp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_two_spades"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/two_of_spades"
+                android:textSize="18dp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_ten_coins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ten_of_coins"
+                android:textSize="18dp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_eight_cups"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eight_of_cups"
+                android:textSize="18dp" />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

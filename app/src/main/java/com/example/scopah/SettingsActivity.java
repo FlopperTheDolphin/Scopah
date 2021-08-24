@@ -10,14 +10,20 @@ import android.view.View;
 import android.widget.RadioButton;
 
 public class SettingsActivity extends AppCompatActivity {
-    private static final String SETTINGS_PREFERENCES_KEY = "com.example.scopah.SETTINGS_PREFERENCES_KEY";
-    private static final String NAPOLA_KEY = "NAPOLA";
-    private static final String MAIN_SEED_KEY = "MAIN_SEED";
+    public static final String SETTINGS_PREFERENCES_KEY = "com.example.scopah.SETTINGS_PREFERENCES_KEY";
+    public static final String NAPOLA_KEY = "NAPOLA";
+    public static final String SEVEN_COINS_KEY = "SEVEN_COINS";
+    public static final String TWO_SPADES_KEY = "TWO_SPADES";
+    public static final String TEN_COINS_KEY = "TEN COINS";
+    public static final String EIGHT_CUPS_KEY = "EIGHT CUPS";
+    public static final String MAIN_SEED_KEY = "MAIN_SEED";
 
     private RadioButton radio_coins;
     private RadioButton radio_spades;
     private RadioButton radio_cups;
     private RadioButton radio_batons;
+
+    private boolean checked;
 
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
@@ -30,20 +36,8 @@ public class SettingsActivity extends AppCompatActivity {
         preferences = getSharedPreferences(SETTINGS_PREFERENCES_KEY, Context.MODE_PRIVATE);
         editor = preferences.edit();
 
-        final SwitchCompat switch_napola = (SwitchCompat) findViewById(R.id.switch_napola);
-        switch_napola.setChecked(preferences.getBoolean(NAPOLA_KEY, true));
 
-        switch_napola.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean napola = preferences.getBoolean(NAPOLA_KEY, true);
-                napola = !napola;
-
-                editor.putBoolean(NAPOLA_KEY, napola);
-                editor.commit();
-            }
-        });
-
+        // main seed
         radio_coins = (RadioButton) findViewById(R.id.radio_coins);
         radio_spades = (RadioButton) findViewById(R.id.radio_spades);
         radio_cups = (RadioButton) findViewById(R.id.radio_cups);
@@ -86,6 +80,68 @@ public class SettingsActivity extends AppCompatActivity {
                 radioRefresh();
             }
         });
+
+
+        // napola
+        SwitchCompat switch_compat = (SwitchCompat) findViewById(R.id.switch_napola);
+        checked = preferences.getBoolean(NAPOLA_KEY, true);
+        switch_compat.setChecked(checked);
+        switch_compat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean(NAPOLA_KEY, !checked);
+                editor.commit();
+            }
+        });
+
+        // seven of coins
+        switch_compat = (SwitchCompat) findViewById(R.id.switch_seven_coins);
+        checked = preferences.getBoolean(SEVEN_COINS_KEY, true);
+        switch_compat.setChecked(checked);
+        switch_compat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean(SEVEN_COINS_KEY, !checked);
+                editor.commit();
+            }
+        });
+
+        // two of spades
+        switch_compat = (SwitchCompat) findViewById(R.id.switch_two_spades);
+        checked = preferences.getBoolean(TWO_SPADES_KEY, true);
+        switch_compat.setChecked(checked);
+        switch_compat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean(TWO_SPADES_KEY, !checked);
+                editor.commit();
+            }
+        });
+
+        // ten of coins
+        switch_compat = (SwitchCompat) findViewById(R.id.switch_ten_coins);
+        checked = preferences.getBoolean(TEN_COINS_KEY, true);
+        switch_compat.setChecked(checked);
+        switch_compat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean(TEN_COINS_KEY, !checked);
+                editor.commit();
+            }
+        });
+
+        // eight of cups
+        switch_compat = (SwitchCompat) findViewById(R.id.switch_eight_cups);
+        checked = preferences.getBoolean(EIGHT_CUPS_KEY, true);
+        switch_compat.setChecked(checked);
+        switch_compat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean(EIGHT_CUPS_KEY, !checked);
+                editor.commit();
+            }
+        });
+
 
     }
 
