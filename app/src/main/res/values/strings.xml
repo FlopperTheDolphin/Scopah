@@ -19,4 +19,10 @@
     <string name="player_two">Player Two</string>
     <string name="player_three">Player Three</string>
     <string name="player_four">Player Four</string>
+    <string name="bonus">Bonus</string>
+    <string name="who_has">Who has</string>
+    <string name="coins">Coins</string>
+    <string name="spades">Spades</string>
+    <string name="cups">Cups</string>
+    <string name="batons">Batons</string>
 </resources>

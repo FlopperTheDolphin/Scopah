@@ -19,4 +19,10 @@
     <string name="player_two">Giocatore Due</string>
     <string name="player_three">Giocatore Tre</string>
     <string name="player_four">Giocatore Quattro</string>
+    <string name="bonus">Bonus</string>
+    <string name="who_has">Chi ha</string>
+    <string name="coins">Denari</string>
+    <string name="spades">Spade</string>
+    <string name="cups">Coppe</string>
+    <string name="batons">Bastoni</string>
 </resources>

@@ -224,8 +224,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void end() {
-        final Intent intent = new Intent(this, LeaderboardActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        final Intent intent = new Intent(this, WizardActivity.class);
         intent.putExtra("names", names);
         intent.putExtra("colors", colors);
         intent.putExtra("scores", scores);

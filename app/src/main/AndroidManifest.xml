@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Scopah">
-        <activity android:name=".LeaderboardActivity"
-            android:label="@string/leaderboard"/>
+        <activity
+            android:name=".WizardActivity"
+            android:label="@string/bonus"/>
+        <activity
+            android:name=".LeaderboardActivity"
+            android:label="@string/leaderboard" />
         <activity
             android:name=".GameActivity"
             android:screenOrientation="portrait" />
