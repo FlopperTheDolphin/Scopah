@@ -78,5 +78,6 @@ public class PlayActivity extends AppCompatActivity {
         intent.putExtra("colors", colors);
 
         startActivity(intent);
+        finish();
     }
 }

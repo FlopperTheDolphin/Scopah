@@ -12,6 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.scopah.utils.LocalData;
+import com.example.scopah.utils.LocalDataDB;
+import com.example.scopah.utils.MatchData;
+
 import java.util.ArrayList;
 
 public class LeaderboardActivity extends AppCompatActivity {
@@ -126,13 +130,32 @@ public class LeaderboardActivity extends AppCompatActivity {
             row.setVisibility(View.INVISIBLE);
         }
 
-        Button buttonNew = (Button) findViewById(R.id.button_new);
-        buttonNew .setOnClickListener(new View.OnClickListener() {
+        Button button = (Button) findViewById(R.id.button_new);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 newGame();
             }
         });
+
+        button = (Button) findViewById(R.id.button_end);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                end();
+            }
+        });
+    }
+
+    private void end() {
+        LocalData dao = new LocalDataDB();
+
+        dao.open();
+        MatchData match = new MatchData(names, colors, scores, true, System.currentTimeMillis());
+        dao.insertData(match);
+        dao.close();
+
+        finish();
     }
 
     private void updateScores() {
