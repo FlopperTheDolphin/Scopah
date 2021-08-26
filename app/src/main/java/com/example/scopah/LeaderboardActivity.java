@@ -12,11 +12,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.scopah.utils.AppContext;
 import com.example.scopah.utils.LocalData;
 import com.example.scopah.utils.LocalDataDB;
 import com.example.scopah.utils.MatchData;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class LeaderboardActivity extends AppCompatActivity {
     private static final String NAMES_KEY = "NAMES";
@@ -35,6 +37,9 @@ public class LeaderboardActivity extends AppCompatActivity {
     private ArrayList<String> names;
     private ArrayList<String> colors;
     private ArrayList<Integer> scores;
+
+    private boolean completed;
+    private long id;
 
     @Override
     protected void onSaveInstanceState(Bundle savedInstanceState) {
@@ -69,16 +74,38 @@ public class LeaderboardActivity extends AppCompatActivity {
         preferences = getSharedPreferences(LEADERBOARD_PREFERENCES_KEY, Context.MODE_PRIVATE);
         editor = preferences.edit();
 
+        completed = intent.getBooleanExtra("completed", true);
+        id = intent.getLongExtra("id", 0);
 
         if (intent.hasExtra("scores")) {
             scores = intent.getIntegerArrayListExtra("scores");
-            updateScores();
+
+            if (intent.hasExtra("sum"))
+                updateScores();
         } else {
             scores = new ArrayList<>();
 
             for (int i = 0; i < size; i++)
                 scores.add(new Integer(0));
         }
+
+        if (intent.hasExtra("completed")) {
+            if (!completed) {
+                LinearLayoutCompat row = (LinearLayoutCompat) findViewById(R.id.row_buttons);
+                row.setVisibility(View.INVISIBLE);
+            } else  {
+                Button b = (Button) findViewById(R.id.button_new);
+                b.setVisibility(View.INVISIBLE);
+                b = (Button) findViewById(R.id.button_save);
+                b.setVisibility(View.INVISIBLE);
+                b = (Button) findViewById(R.id.button_end);
+                b.setVisibility(View.INVISIBLE);
+            }
+        } else {
+            Button resume = (Button) findViewById(R.id.button_resume);
+            resume.setVisibility(View.INVISIBLE);
+        }
+
 
         // write scores in SavedPreferences
         editor.putInt(SCORE_ONE_KEY, scores.get(0).intValue());
@@ -138,20 +165,52 @@ public class LeaderboardActivity extends AppCompatActivity {
             }
         });
 
+        button = (Button) findViewById(R.id.button_save);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                end(false);
+            }
+        });
+
         button = (Button) findViewById(R.id.button_end);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                end();
+                end(true);
+            }
+        });
+
+        button = (Button) findViewById(R.id.button_resume);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LocalData dao = new LocalDataDB();
+                dao.open();
+
+                dao.deleteData(id);
+
+                dao.close();
+
+                Intent intent = new Intent(AppContext.getAppContext(), LeaderboardActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                intent.putExtra("names", names);
+                intent.putExtra("colors", colors);
+                intent.putExtra("scores", scores);
+
+                startActivity(intent);
+                finish();
             }
         });
     }
 
-    private void end() {
+    private void end(boolean completed) {
         LocalData dao = new LocalDataDB();
 
         dao.open();
-        MatchData match = new MatchData(names, colors, scores, true, System.currentTimeMillis());
+        MatchData match = new MatchData(names, colors, scores, completed,
+                Calendar.getInstance().getTimeInMillis());
         dao.insertData(match);
         dao.close();
 

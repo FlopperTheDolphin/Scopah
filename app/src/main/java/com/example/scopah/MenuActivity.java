@@ -61,12 +61,14 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void resume() {
-        final Intent intent = new Intent(this, ResumeActivity.class);
+        final Intent intent = new Intent(this, ViewMatchesActivity.class);
+        intent.putExtra("completed", false);
         startActivity(intent);
     }
 
     private void stats() {
-        final Intent intent = new Intent(this, StatsActivity.class);
+        final Intent intent = new Intent(this, ViewMatchesActivity.class);
+        intent.putExtra("completed", true);
         startActivity(intent);
     }
 }

@@ -155,8 +155,8 @@ public class WizardActivity extends AppCompatActivity {
                 }
             });
         } else {
-            LinearLayoutCompat row = (LinearLayoutCompat) findViewById(R.id.row3);
-            row.setVisibility(View.INVISIBLE);
+            Button p3 = (Button) findViewById(R.id.button_three);
+            p3.setVisibility(View.INVISIBLE);
         }
 
         // player four
@@ -179,8 +179,8 @@ public class WizardActivity extends AppCompatActivity {
                 }
             });
         } else {
-            LinearLayoutCompat row = (LinearLayoutCompat) findViewById(R.id.row4);
-            row.setVisibility(View.INVISIBLE);
+            Button p4 = (Button) findViewById(R.id.button_four);
+            p4.setVisibility(View.INVISIBLE);
         }
 
         // skip
@@ -220,6 +220,7 @@ public class WizardActivity extends AppCompatActivity {
         intent.putExtra("names", names);
         intent.putExtra("colors", colors);
         intent.putExtra("scores", scores);
+        intent.putExtra("sum", 0);
 
         startActivity(intent);
     }

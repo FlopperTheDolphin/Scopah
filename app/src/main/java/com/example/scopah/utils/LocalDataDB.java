@@ -31,12 +31,13 @@ public class LocalDataDB implements LocalData {
     }
 
     @Override
-    public ArrayList<MatchData> getAllData() {
+    public ArrayList<MatchData> getAllData(boolean completed) {
         ArrayList<MatchData> matches = new ArrayList<>();
 
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns,
-                null, null, null, null,
-                DatabaseHelper.COLUMN_MATCH_ID);
+                DatabaseHelper.COLUMN_COMPLETED + " = ?",
+                new String[] {"" + (completed ? 1 : 0)}, null, null,
+                DatabaseHelper.COLUMN_MATCH_ID + " DESC");
 
         cursor.moveToFirst();
 
@@ -63,6 +64,12 @@ public class LocalDataDB implements LocalData {
         MatchData ret = cursorToData(cursor, data.getId());
         cursor.close();
         return ret;
+    }
+
+    @Override
+    public int deleteData(long id) {
+        return database.delete(DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_MATCH_ID + " = ?",
+                new String[] {"" + id});
     }
 
     private MatchData cursorToData(Cursor cursor, long id) {

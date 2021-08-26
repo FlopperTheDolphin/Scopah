@@ -20,7 +20,7 @@
             android:name=".GameActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".StatsActivity"
+            android:name=".ViewMatchesActivity"
             android:label="@string/past_games" />
         <activity
             android:name=".ResumeActivity"
