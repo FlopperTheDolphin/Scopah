@@ -23,9 +23,6 @@
             android:name=".ViewMatchesActivity"
             android:label="@string/past_games" />
         <activity
-            android:name=".ResumeActivity"
-            android:label="@string/saved_games" />
-        <activity
             android:name=".PlayActivity"
             android:label="@string/players" />
         <activity

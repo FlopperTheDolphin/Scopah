@@ -84,60 +84,60 @@ public class SettingsActivity extends AppCompatActivity {
 
         // napola
         SwitchCompat switch_compat = (SwitchCompat) findViewById(R.id.switch_napola);
-        checked = preferences.getBoolean(NAPOLA_KEY, true);
-        switch_compat.setChecked(checked);
+        switch_compat.setChecked(preferences.getBoolean(NAPOLA_KEY, true));
         switch_compat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editor.putBoolean(NAPOLA_KEY, !checked);
+                SwitchCompat s = (SwitchCompat) v;
+                editor.putBoolean(NAPOLA_KEY, s.isChecked());
                 editor.commit();
             }
         });
 
         // seven of coins
         switch_compat = (SwitchCompat) findViewById(R.id.switch_seven_coins);
-        checked = preferences.getBoolean(SEVEN_COINS_KEY, true);
-        switch_compat.setChecked(checked);
+        switch_compat.setChecked(preferences.getBoolean(SEVEN_COINS_KEY, true));
         switch_compat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editor.putBoolean(SEVEN_COINS_KEY, !checked);
+                SwitchCompat s = (SwitchCompat) v;
+                editor.putBoolean(SEVEN_COINS_KEY, s.isChecked());
                 editor.commit();
             }
         });
 
         // two of spades
         switch_compat = (SwitchCompat) findViewById(R.id.switch_two_spades);
-        checked = preferences.getBoolean(TWO_SPADES_KEY, true);
-        switch_compat.setChecked(checked);
+        switch_compat.setChecked(preferences.getBoolean(TWO_SPADES_KEY, false));
         switch_compat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editor.putBoolean(TWO_SPADES_KEY, !checked);
+                SwitchCompat s = (SwitchCompat) v;
+                editor.putBoolean(TWO_SPADES_KEY, s.isChecked());
                 editor.commit();
             }
         });
 
         // ten of coins
         switch_compat = (SwitchCompat) findViewById(R.id.switch_ten_coins);
-        checked = preferences.getBoolean(TEN_COINS_KEY, true);
-        switch_compat.setChecked(checked);
+        switch_compat.setChecked(preferences.getBoolean(TEN_COINS_KEY, false));
         switch_compat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editor.putBoolean(TEN_COINS_KEY, !checked);
+                SwitchCompat s = (SwitchCompat) v;
+                editor.putBoolean(TEN_COINS_KEY, s.isChecked());
                 editor.commit();
             }
         });
 
         // eight of cups
         switch_compat = (SwitchCompat) findViewById(R.id.switch_eight_cups);
-        checked = preferences.getBoolean(EIGHT_CUPS_KEY, true);
-        switch_compat.setChecked(checked);
+        switch_compat.setChecked(preferences.getBoolean(EIGHT_CUPS_KEY, false));
         switch_compat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editor.putBoolean(EIGHT_CUPS_KEY, !checked);
+                SwitchCompat s = (SwitchCompat) v;
+                editor.putBoolean(EIGHT_CUPS_KEY, s.isChecked());
                 editor.commit();
             }
         });

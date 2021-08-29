@@ -4,7 +4,7 @@
     <string name="application_name">Scopah</string>
     <string name="play">Play</string>
     <string name="resume">Resume</string>
-    <string name="stats">Stats</string>
+    <string name="completed">Completed</string>
     <string name="past_games">Past Games</string>
     <string name="saved_games">Saved Games</string>
     <string name="players">Players</string>
@@ -42,4 +42,6 @@
     <string name="two_of_spades">Two of Spades</string>
     <string name="ten_of_coins">Ten of Coins</string>
     <string name="eight_of_cups">Eight of Cups</string>
+    <string name="without_saving">Exit without saving?</string>
+    <string name="start">Start</string>
 </resources>

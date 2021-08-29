@@ -1,9 +1,12 @@
 package com.example.scopah;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -203,6 +206,33 @@ public class LeaderboardActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = getIntent();
+
+        if (!intent.hasExtra("completed")) {
+            new AlertDialog.Builder(this)
+                    .setMessage(R.string.without_saving)
+
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            LeaderboardActivity.super.onBackPressed();
+                        }
+                    })
+
+                    .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // do nothing
+                        }
+                    })
+
+                    .show();
+        } else
+            super.onBackPressed();
     }
 
     private void end(boolean completed) {

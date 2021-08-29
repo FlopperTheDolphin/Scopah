@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:textSize="24dp"
             android:layout_margin="10dp"
-            android:text="@string/stats"/>
+            android:text="@string/completed"/>
 
         <Button
             android:id="@+id/button_settings"

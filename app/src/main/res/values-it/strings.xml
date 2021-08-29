@@ -4,8 +4,8 @@
     <string name="application_name">Scopah</string>
     <string name="play">Gioca</string>
     <string name="resume">Continua</string>
-    <string name="stats">Statistiche</string>
-    <string name="past_games">Partitie Giocate</string>
+    <string name="completed">Concluse</string>
+    <string name="past_games">Partitie Concluse</string>
     <string name="saved_games">Partite Salvate</string>
     <string name="players">Giocatori</string>
     <string name="settings">Impostazioni</string>
@@ -42,4 +42,6 @@
     <string name="two_of_spades">Due di Spade</string>
     <string name="ten_of_coins">Re di Denari</string>
     <string name="eight_of_cups">Fante di Coppe</string>
+    <string name="without_saving">Uscire senza salvare?</string>
+    <string name="start">Avvia</string>
 </resources>
