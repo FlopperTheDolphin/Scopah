@@ -44,4 +44,6 @@
     <string name="eight_of_cups">Eight of Cups</string>
     <string name="without_saving">Exit without saving?</string>
     <string name="start">Start</string>
+    <string name="match_saved">Match saved</string>
+    <string name="match_concluded">Match concluded</string>
 </resources>

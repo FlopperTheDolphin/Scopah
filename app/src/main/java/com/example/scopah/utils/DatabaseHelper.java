@@ -1,9 +1,11 @@
 package com.example.scopah.utils;
 
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 
 import java.util.ArrayList;
 
@@ -18,6 +20,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_COLOR = "COLOR";
     public static final String COLUMN_SCORE = "SCORE";
     public static final String COLUMN_COMPLETED = "COMPLETED";
+
+    public static final String MIME_TYPE_DIR = ContentResolver.CURSOR_DIR_BASE_TYPE
+            + "/vnd.scopah";
+    public static final String MIME_TYPE_ITEM = ContentResolver.CURSOR_ITEM_BASE_TYPE +
+            "/vnd.scopah";
+
+    public static final String AUTHORITY = "com.example.scopah";
+    public static final String PATH = "matches";
+    public static final Uri CONTENT_URI = Uri.parse(ContentResolver.SCHEME_CONTENT + "://" + AUTHORITY + "/" + PATH);
 
     private static final String QUERY_CREATE_DB = "CREATE TABLE " +
             TABLE_NAME + "(" +

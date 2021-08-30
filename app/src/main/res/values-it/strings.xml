@@ -44,4 +44,6 @@
     <string name="eight_of_cups">Fante di Coppe</string>
     <string name="without_saving">Uscire senza salvare?</string>
     <string name="start">Avvia</string>
+    <string name="match_saved">Partita salvata</string>
+    <string name="match_concluded">Partita conclusa</string>
 </resources>

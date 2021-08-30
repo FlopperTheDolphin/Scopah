@@ -18,6 +18,7 @@ import com.example.scopah.utils.AppContext;
 import com.example.scopah.utils.LocalData;
 import com.example.scopah.utils.LocalDataDB;
 import com.example.scopah.utils.MatchData;
+import com.example.scopah.utils.ScopahContentResolver;
 
 import java.util.ArrayList;
 
@@ -66,7 +67,7 @@ public class ViewMatchesActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        LocalData dao = new LocalDataDB();
+        LocalData dao = new ScopahContentResolver();
         dao.open();
 
         mModel.clear();

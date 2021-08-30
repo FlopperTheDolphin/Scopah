@@ -14,11 +14,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.scopah.utils.AppContext;
 import com.example.scopah.utils.LocalData;
 import com.example.scopah.utils.LocalDataDB;
 import com.example.scopah.utils.MatchData;
+import com.example.scopah.utils.ScopahContentResolver;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -236,13 +238,18 @@ public class LeaderboardActivity extends AppCompatActivity {
     }
 
     private void end(boolean completed) {
-        LocalData dao = new LocalDataDB();
+        LocalData dao = new ScopahContentResolver();
 
         dao.open();
         MatchData match = new MatchData(names, colors, scores, completed,
                 Calendar.getInstance().getTimeInMillis());
         dao.insertData(match);
         dao.close();
+
+        if (completed)
+            Toast.makeText(this, R.string.match_saved, Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(this, R.string.match_concluded, Toast.LENGTH_SHORT).show();
 
         finish();
     }

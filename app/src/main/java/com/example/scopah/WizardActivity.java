@@ -61,13 +61,13 @@ public class WizardActivity extends AppCompatActivity {
         if (preferences.getBoolean(SettingsActivity.SEVEN_COINS_KEY, true))
             questions.add(who_has + getString(R.string.seven_coins));
 
-        if (preferences.getBoolean(SettingsActivity.TWO_SPADES_KEY, true))
+        if (preferences.getBoolean(SettingsActivity.TWO_SPADES_KEY, false))
             questions.add(who_has + getString(R.string.two_spades));
 
-        if (preferences.getBoolean(SettingsActivity.TEN_COINS_KEY, true))
+        if (preferences.getBoolean(SettingsActivity.TEN_COINS_KEY, false))
             questions.add(who_has + getString(R.string.ten_coins));
 
-        if (preferences.getBoolean(SettingsActivity.EIGHT_CUPS_KEY, true))
+        if (preferences.getBoolean(SettingsActivity.EIGHT_CUPS_KEY, false))
             questions.add(who_has + getString(R.string.eight_cups));
 
         if (questionIndex == 0) {
