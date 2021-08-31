@@ -247,9 +247,9 @@ public class LeaderboardActivity extends AppCompatActivity {
         dao.close();
 
         if (completed)
-            Toast.makeText(this, R.string.match_saved, Toast.LENGTH_SHORT).show();
-        else
             Toast.makeText(this, R.string.match_concluded, Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(this, R.string.match_saved, Toast.LENGTH_SHORT).show();
 
         finish();
     }
