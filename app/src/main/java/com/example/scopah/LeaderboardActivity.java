@@ -111,19 +111,6 @@ public class LeaderboardActivity extends AppCompatActivity {
             resume.setVisibility(View.INVISIBLE);
         }
 
-
-        // write scores in SavedPreferences
-        editor.putInt(SCORE_ONE_KEY, scores.get(0).intValue());
-        editor.putInt(SCORE_TWO_KEY, scores.get(1).intValue());
-
-        if (size >= 3)
-            editor.putInt(SCORE_THREE_KEY, scores.get(2).intValue());
-
-        if (size == 4)
-            editor.putInt(SCORE_FOUR_KEY, scores.get(3).intValue());
-
-        editor.commit();
-
         // player one
         TextView name = (TextView) findViewById(R.id.text1);
         name.setBackgroundColor(Color.parseColor(colors.get(0)));
@@ -256,18 +243,36 @@ public class LeaderboardActivity extends AppCompatActivity {
 
     private void updateScores() {
         scores.set(0, scores.get(0) + preferences.getInt(SCORE_ONE_KEY, 0));
+        editor.putInt(SCORE_ONE_KEY, 0);
         scores.set(1, scores.get(1) + preferences.getInt(SCORE_TWO_KEY, 0));
+        editor.putInt(SCORE_TWO_KEY, 0);
 
         int size = scores.size();
 
-        if (size >= 3)
+        if (size >= 3) {
             scores.set(2, scores.get(2) + preferences.getInt(SCORE_THREE_KEY, 0));
+            editor.putInt(SCORE_THREE_KEY, 0);
+        }
 
-        if (size == 4)
+        if (size == 4) {
             scores.set(3, scores.get(3) + preferences.getInt(SCORE_FOUR_KEY, 0));
+            editor.putInt(SCORE_FOUR_KEY, 0);
+        }
+        editor.commit();
     }
 
     private void newGame() {
+        // write scores in SavedPreferences
+        editor.putInt(SCORE_ONE_KEY, scores.get(0).intValue());
+        editor.putInt(SCORE_TWO_KEY, scores.get(1).intValue());
+
+        if (names.size() >= 3)
+            editor.putInt(SCORE_THREE_KEY, scores.get(2).intValue());
+
+        if (names.size() == 4)
+            editor.putInt(SCORE_FOUR_KEY, scores.get(3).intValue());
+
+        editor.commit();
 
         final Intent intent = new Intent(this, GameActivity.class);
         intent.putExtra("names", names);

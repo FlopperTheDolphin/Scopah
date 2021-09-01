@@ -20,11 +20,11 @@
 
 
             <Button
-                android:id="@+id/button_one_minus"
+                android:id="@+id/button_one_plus"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="-"
+                android:text="+"
                 android:textSize="48dp" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -61,11 +61,11 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <Button
-                android:id="@+id/button_one_plus"
+                android:id="@+id/button_one_minus"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="+"
+                android:text="-"
                 android:textSize="48dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
