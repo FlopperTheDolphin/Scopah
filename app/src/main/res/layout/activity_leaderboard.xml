@@ -159,7 +159,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
+                android:backgroundTint="#4CAF50"
                 android:text="@string/new_round"
+                android:textColor="#000000"
                 android:textSize="24dp" />
 
 
@@ -168,9 +170,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
+                android:backgroundTint="#4CAF50"
                 android:text="@string/save"
+                android:textColor="#000000"
                 android:textSize="24dp" />
-
 
 
             <Button
@@ -178,7 +181,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
+                android:backgroundTint="#4CAF50"
                 android:text="@string/end"
+                android:textColor="#000000"
                 android:textSize="24dp" />
 
             <Button
@@ -186,7 +191,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
+                android:backgroundTint="#4CAF50"
                 android:text="@string/resume"
+                android:textColor="#000000"
                 android:textSize="24dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

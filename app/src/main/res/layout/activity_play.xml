@@ -150,7 +150,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
+                android:backgroundTint="#4CAF50"
                 android:text="@string/start"
+                android:textColor="#000000"
                 android:textSize="24dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

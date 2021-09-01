@@ -35,22 +35,24 @@
                 android:paddingVertical="20dp">
 
                 <TextView
+                    android:id="@+id/count"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
-                    android:textSize="32dp"
-                    android:text="Coins from 1 to:"/>
+                    android:text="@string/coins_from_1_to"
+                    android:textSize="32dp" />
 
                 <EditText
                     android:id="@+id/editTextNumber"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:selectAllOnFocus="true"
-                    android:inputType="number"
                     android:layout_weight="1"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:selectAllOnFocus="true"
                     android:text="3"
-                    android:textSize="32dp"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textSize="32dp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -66,9 +68,11 @@
                 android:id="@+id/button_one"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:backgroundTint="#4CAF50"
                 android:singleLine="true"
                 android:text="@string/player_one"
                 android:textAlignment="center"
+                android:textColor="#000000"
                 android:textSize="32dp" />
 
 
@@ -76,41 +80,47 @@
                 android:id="@+id/button_two"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:backgroundTint="#4CAF50"
                 android:singleLine="true"
                 android:text="@string/player_two"
                 android:textAlignment="center"
+                android:textColor="#000000"
                 android:textSize="32dp" />
+
 
             <Button
                 android:id="@+id/button_three"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:backgroundTint="#4CAF50"
                 android:singleLine="true"
                 android:text="@string/player_three"
                 android:textAlignment="center"
+                android:textColor="#000000"
                 android:textSize="32dp" />
-
-
 
             <Button
                 android:id="@+id/button_four"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:backgroundTint="#4CAF50"
                 android:singleLine="true"
                 android:text="@string/player_four"
                 android:textAlignment="center"
+                android:textColor="#000000"
                 android:textSize="32dp" />
-
 
 
             <Button
                 android:id="@+id/button_skip"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
+                android:layout_gravity="right"
+                android:backgroundTint="#4CAF50"
                 android:singleLine="true"
                 android:text="@string/skip"
-                android:textSize="32dp"
-                android:layout_gravity="right"/>
+                android:textColor="#000000"
+                android:textSize="32dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>

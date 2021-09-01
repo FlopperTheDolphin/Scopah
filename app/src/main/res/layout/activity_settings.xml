@@ -22,7 +22,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Main Seed"
+                android:text="@string/main_seed"
                 android:textColor="@android:color/black"
                 android:textSize="18dp" />
 

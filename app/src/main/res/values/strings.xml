@@ -46,4 +46,6 @@
     <string name="start">Start</string>
     <string name="match_saved">Match saved</string>
     <string name="match_concluded">Match concluded</string>
+    <string name="coins_from_1_to">from 1 to:</string>
+    <string name="main_seed">Main Seed</string>
 </resources>

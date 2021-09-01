@@ -46,4 +46,6 @@
     <string name="start">Avvia</string>
     <string name="match_saved">Partita salvata</string>
     <string name="match_concluded">Partita conclusa</string>
+    <string name="coins_from_1_to">Da 1 a:</string>
+    <string name="main_seed">Seme Principale</string>
 </resources>
